@@ -28,6 +28,11 @@ MAKEFUN_ENV_URL=http://127.0.0.1:PORT python3 main.py
 - Anti-repetition: the driver refuses to reverse its own last move when the
   opponent just reversed theirs, so it converts repetition draws into wins
   instead of shuffling.
+- No opening book: a general engine. A 40-opening Stockfish book was computed
+  during development but did not fit in 4 KB alongside the engine.
 
 Practice trial-0 (local, vs the real env + scorer): **Elo 1,173**
 (2 wins, 1 draw, 5 losses) — above the 1,154 practice floor.
+
+Entrypoint: `main.py` is 4,081 bytes (limit 4,096), produced from `tiny.py`
+with `makefun compress` and verified with the kit's own tool.
